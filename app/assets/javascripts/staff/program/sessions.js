@@ -12,7 +12,9 @@ $(document).ready(function () {
     if ($("#program-sessions.datatable").length > 0) {
         filterProgramSessionsBy("program")
 
-        $(".quick-filter-tabs .tab").on('click', (e) => filterProgramSessionsBy(e.currentTarget.id))
+        $(".quick-filter-tabs .tab").on('click', function(e) {
+            filterProgramSessionsBy(e.currentTarget.id))
+        }
     }
 })
 
