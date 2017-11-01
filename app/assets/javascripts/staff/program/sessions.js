@@ -13,8 +13,8 @@ $(document).ready(function () {
         filterProgramSessionsBy("program")
 
         $(".quick-filter-tabs .tab").on('click', function(e) {
-            filterProgramSessionsBy(e.currentTarget.id))
-        }
+            filterProgramSessionsBy(e.currentTarget.id)
+        })
     }
 })
 
