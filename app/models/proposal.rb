@@ -18,7 +18,7 @@ class Proposal < ApplicationRecord
   belongs_to :session_format
   belongs_to :track
 
-  validates :title, :abstract, :session_format, presence: true
+  validates :title, :abstract, :session_format, :pitch, :details, presence: true
 
   # This used to be 600, but it's so confusing for users that the browser
   # uses \r\n for newlines and they're over the 600 limit because of
@@ -101,6 +101,25 @@ class Proposal < ApplicationRecord
   def custom_fields
     proposal_data[:custom_fields] || {}
   end
+
+  # The ScalaDays conference has two occurrences: in Europe and in the US.
+  # Each proposal is applied to one or two occurrences.
+  def self.allOccurrences
+    {
+        "Scala Days Europe" => "eu",
+        "Scala Days North America" => "us"
+    }
+  end
+
+  def occurrences
+    if internal_occurrences.present?
+      internal_occurrences.split(',')
+    else
+      []
+    end
+  end
+
+  # TODO Validate that at least one occurrence is selected
 
   def update_state(new_state)
     update(state: new_state)
@@ -312,6 +331,7 @@ end
 #  confirmed_at          :datetime
 #  created_at            :datetime
 #  updated_at            :datetime
+#  internal_occurrences  :string
 #
 # Indexes
 #

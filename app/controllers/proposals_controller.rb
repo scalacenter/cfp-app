@@ -124,7 +124,9 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:title, {tags: []}, :session_format_id, :track_id, :abstract, :details, :pitch, custom_fields: @event.custom_fields,
+    # FIXME Better error handling
+    params['proposal']['internal_occurrences'] = params['proposal']['internal_occurrences'].join(',')
+    params.require(:proposal).permit(:internal_occurrences, :title, {tags: []}, :session_format_id, :track_id, :abstract, :details, :pitch, custom_fields: @event.custom_fields,
                                      comments_attributes: [:body, :proposal_id, :user_id],
                                      speakers_attributes: [:bio, :id])
   end
