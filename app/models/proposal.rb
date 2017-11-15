@@ -29,6 +29,8 @@ class Proposal < ApplicationRecord
   validates_inclusion_of :state, in: FINAL_STATES, allow_nil: false, message: "'%{value}' not a confirmable state.",
                          if: :confirmed_at_changed?
 
+  validates :internal_occurrences, length: {minimum: 1}
+
   serialize :last_change
   serialize :proposal_data, Hash
 
