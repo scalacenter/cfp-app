@@ -18,6 +18,8 @@
 
   = proposal.title_input(f)
 
+  = f.input :keywords, required: true, input_html: { class: 'watched' }
+
   - opts_session_formats = event.session_formats.publicly_viewable.map {|st| [st.name, st.id]}
   - if !proposal.has_reviewer_activity?
     - if opts_session_formats.length > 1
