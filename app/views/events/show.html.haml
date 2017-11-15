@@ -3,10 +3,6 @@
     .col-md-8
       .event-info.event-info-dense
         %strong.event-title= event.name
-        - if event.start_date? && event.end_date?
-          %span.event-meta
-            %i.fa.fa-fw.fa-calendar
-            = event.date_range
         - if event.url?
           %span.event-meta
             %i.fa.fa-fw.fa-external-link-square
