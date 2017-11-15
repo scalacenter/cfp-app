@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 29171114134000) do
+ActiveRecord::Schema.define(version: 29171114134001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 29171114134000) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "internal_occurrences"
+    t.string   "keywords",              default: ""
     t.index ["event_id"], name: "index_proposals_on_event_id", using: :btree
     t.index ["session_format_id"], name: "index_proposals_on_session_format_id", using: :btree
     t.index ["track_id"], name: "index_proposals_on_track_id", using: :btree

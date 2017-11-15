@@ -18,7 +18,7 @@ class Proposal < ApplicationRecord
   belongs_to :session_format
   belongs_to :track
 
-  validates :title, :abstract, :session_format, :pitch, :details, :track, presence: true
+  validates :title, :abstract, :session_format, :pitch, :details, :track, :keywords, presence: true
 
   # This used to be 600, but it's so confusing for users that the browser
   # uses \r\n for newlines and they're over the 600 limit because of
@@ -341,6 +341,7 @@ end
 #  created_at            :datetime
 #  updated_at            :datetime
 #  internal_occurrences  :string
+#  keywords              :string           default("")
 #
 # Indexes
 #
