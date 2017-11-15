@@ -50,10 +50,10 @@
   %p
     This content will <strong> only</strong> be visible to the review committee.
 
-  = f.input :details, label: 'Required level', input_html: { class: 'watched', rows: 5 },
+  = f.input :details, label: 'Required Knowledge', input_html: { class: 'watched', rows: 5 },
     hint: 'Describe which previous knowledge attendees of your session / workshop should have. '#, popover_icon: { content: details_tooltip }
 
-  = f.input :pitch, label: 'Learning objectives', input_html: { class: 'watched', rows: 5 },
+  = f.input :pitch, label: 'Learning Objectives', input_html: { class: 'watched', rows: 5 },
     hint: 'Outline briefly the learning objectives of your submission.'#, popover_icon: { content: pitch_tooltip }
 
 - if event.custom_fields.any?
