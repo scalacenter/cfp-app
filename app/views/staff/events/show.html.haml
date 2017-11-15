@@ -14,9 +14,6 @@
             = link_to event.name, "#{event.url}", target: 'blank', class: 'event-title'
           - else
             = event.name
-        %h4
-          - if event.start_date? && event.end_date?
-            = event.date_range
 
   .row
     - if event.draft?
