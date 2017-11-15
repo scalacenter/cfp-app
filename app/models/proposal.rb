@@ -119,6 +119,13 @@ class Proposal < ApplicationRecord
     end
   end
 
+  def occurrencesView
+    Proposal.allOccurrences
+        .select { |k, v| self.occurrences.include? v }
+        .map { |k, v| k }
+        .join(' and ')
+  end
+
   # TODO Validate that at least one occurrence is selected
 
   def update_state(new_state)
