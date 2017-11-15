@@ -1,4 +1,9 @@
 .proposal-section
+  %h3.control-label Events
+  %div
+    = proposal.occurrencesView
+
+.proposal-section
   %h3.control-label Abstract
   .markdown{ data: { 'field-id' => 'proposal_abstract' } }
     = proposal.abstract_markdown
