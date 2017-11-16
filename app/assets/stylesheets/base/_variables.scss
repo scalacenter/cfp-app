@@ -11,11 +11,11 @@ $white: #fff;
 $black: #000;
 
 //Triad Color Theory
-$ruby-central-red: #91181C;
-$dark-red: #440407;
+$ruby-central-red: #de3423;
+$dark-red: #CC2D25;
 $gold: #9E9B2A;
 $dark-blue: #063E5E;
-$bright-blue: #1A95DD;
+$bright-blue: #39BAD8;
 $green: #189138;
 
 $gray-base:              $black !default;
@@ -56,7 +56,7 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
