@@ -44,16 +44,14 @@
           %th
           %th
           %th
-          %th
         %tr
           %th Score
           %th Your<br/>Score
           %th Ratings
+          %th Speakers
           %th Title
           %th Session Format
           %th Track
-          %th Proposal<br/>Tags
-          %th Reviewer<br/>Tags
           %th Comments
           %th Submitted On
           %th Updated At
@@ -66,6 +64,7 @@
               = proposal.score_for(current_user)
             %td.ratings-count
               = proposal.ratings.size
+            %td= proposal.speaker_names
             %td.title
               = proposal.title_link_for_review
               = state_label(small: true) if proposal.withdrawn?
@@ -73,10 +72,6 @@
               = proposal.session_format_name
             %td.track
               = proposal.track_name
-            %td.tags
-              = proposal.tags_labels
-            %td.review-tags
-              = proposal.review_tags_labels
             %td.comment-count
               = proposal.comment_count
             %td.created-at
