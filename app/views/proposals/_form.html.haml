@@ -53,11 +53,6 @@
         options_for_select(event.proposal_tags, proposal.object.tags),
         {}, {class: 'multiselect proposal-tags', multiple: true }
 
-%fieldset
-  %legend.fieldset-legend For Review Committee
-  %p
-    This content will <strong> only</strong> be visible to the review committee.
-
   = f.input :details, label: 'Required Knowledge', input_html: { class: 'watched', rows: 5 },
     hint: 'Describe which previous knowledge attendees of your session / workshop should have. '#, popover_icon: { content: details_tooltip }
 
