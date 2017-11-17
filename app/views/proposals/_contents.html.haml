@@ -4,8 +4,13 @@
     = proposal.occurrencesView
 
 .proposal-section
+  %h3.control-label Title
+  %div{ data: { 'field-id' => 'proposal_title' } }
+    = proposal.title
+
+.proposal-section
   %h3.control-label Keywords
-  %div
+  %div{ data: { 'field-id' => 'proposal_keywords' } }
     = proposal.keywords
 
 .proposal-section
