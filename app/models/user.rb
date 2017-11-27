@@ -63,6 +63,10 @@ class User < ApplicationRecord
     update(bio: speakers.last.bio) if bio.blank?
   end
 
+  def update_webpage
+    update(webpage: speakers.last.webpage) if webpage.blank?
+  end
+
   def gravatar_hash
     self.class.gravatar_hash(email)
   end
@@ -167,6 +171,7 @@ end
 #  remember_created_at    :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  webpage                :string           default("")
 #
 # Indexes
 #
