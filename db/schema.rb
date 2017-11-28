@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 29171114134001) do
+ActiveRecord::Schema.define(version: 29171114134003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 29171114134001) do
     t.text     "info"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "webpage",            default: ""
     t.index ["event_id"], name: "index_speakers_on_event_id", using: :btree
     t.index ["program_session_id"], name: "index_speakers_on_program_session_id", using: :btree
     t.index ["proposal_id"], name: "index_speakers_on_proposal_id", using: :btree
@@ -244,6 +245,7 @@ ActiveRecord::Schema.define(version: 29171114134001) do
     t.datetime "remember_created_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "webpage",                default: ""
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", using: :btree
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree

@@ -17,4 +17,8 @@ class SpeakerDecorator < ApplicationDecorator
   def bio
     object.bio.present? ? object.bio : object.user.try(:bio)
   end
+
+  def webpage
+    object.webpage.present? ? object.webpage : object.user.try(:webpage)
+  end
 end

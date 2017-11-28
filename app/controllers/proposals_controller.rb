@@ -77,6 +77,7 @@ class ProposalsController < ApplicationController
 
     if @proposal.save
       current_user.update_bio
+      current_user.update_webpage
       flash[:info] = setup_flash_message
       redirect_to event_proposal_url(event_slug: @event.slug, uuid: @proposal)
     else
@@ -128,7 +129,7 @@ class ProposalsController < ApplicationController
     params['proposal']['internal_occurrences'] = params['proposal']['internal_occurrences'].join(',')
     params.require(:proposal).permit(:internal_occurrences, :title, :keywords, {tags: []}, :session_format_id, :track_id, :abstract, :details, :pitch, custom_fields: @event.custom_fields,
                                      comments_attributes: [:body, :proposal_id, :user_id],
-                                     speakers_attributes: [:bio, :id])
+                                     speakers_attributes: [:bio, :id, :webpage])
   end
 
   def notes_params
