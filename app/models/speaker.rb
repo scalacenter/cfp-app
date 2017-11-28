@@ -11,7 +11,7 @@ class Speaker < ApplicationRecord
 
   validates :event, presence: true
   validates :bio, length: {maximum: 500}
-  validates :name, :email, :webpage, presence: true, unless: :skip_name_email_validation
+  validates :name, :email, presence: true, unless: :skip_name_email_validation
   validates_format_of :email, with: Devise.email_regexp
 
   attr_accessor :skip_name_email_validation
