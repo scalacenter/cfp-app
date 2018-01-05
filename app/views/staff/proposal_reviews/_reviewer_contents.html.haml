@@ -9,6 +9,14 @@
     = proposal.abstract_markdown
 
 .proposal-section
+  %h3.control-label Speakers bio
+  - proposal.speakers.each do |speaker|
+    %div
+      = link_to(speaker.name, event_staff_program_speaker_path(speaker.proposal.event, speaker))
+    %p
+      = speaker.bio
+
+.proposal-section
   %h3.control-label Required Knowledge
   .markdown{ data: { 'field-id' => 'proposal_details' } }
     = markdown(proposal.details)
