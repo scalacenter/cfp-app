@@ -17,6 +17,11 @@
       = speaker.bio
 
 .proposal-section
+  %h3.control-label Keywords
+  %div{ data: { 'field-id' => 'proposal_keywords' } }
+    = proposal.keywords
+
+.proposal-section
   %h3.control-label Required Knowledge
   .markdown{ data: { 'field-id' => 'proposal_details' } }
     = markdown(proposal.details)
