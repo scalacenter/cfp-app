@@ -44,12 +44,14 @@
           %th
           %th
           %th
+          %th
         %tr
           %th Score
           %th Your<br/>Score
           %th Ratings
           %th Speakers
           %th Title
+          %th Tags
           %th Session Format
           %th Track
           %th Comments
@@ -68,6 +70,7 @@
             %td.title
               = proposal.title_link_for_review
               = state_label(small: true) if proposal.withdrawn?
+            %td= proposal.tags.join(", ")
             %td.session-format
               = proposal.session_format_name
             %td.track
