@@ -4,7 +4,9 @@
     %td= proposal.ratings.size
     %td= proposal.standard_deviation
     %td= proposal.occurrences.select { |o| !o.blank? }.join(", ")
-    %td= proposal.speaker_names
+    %td
+      - proposal.speakers.each do |speaker|
+        = link_to speaker.name, "mailto:" + speaker.email
     %td= proposal.title_link
     %td= proposal.keywords
     %td= proposal.track_name
