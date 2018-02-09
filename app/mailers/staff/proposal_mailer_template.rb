@@ -5,7 +5,7 @@ class Staff::ProposalMailerTemplate
     @template = template
     @event = event
     @proposal = proposal
-    @tags = build_tags(tag_whitelist)
+    @tags = build_tags(tag_whitelist.concat([:speaker_names]))
   end
 
   def render
