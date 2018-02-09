@@ -36,7 +36,7 @@ class Staff::ProposalMailerTemplate
     whitelist = tag_whitelist.map(&:to_s)
 
     tags = {
-      'speaker_names' => @proposal.speaker_names,
+      'speaker_names' => @proposal.speakers.map(&:name).join(', '),
       'proposal_title' => @proposal.title,
       'confirmation_link' => confirmation_link
     }
