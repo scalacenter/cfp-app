@@ -42,6 +42,11 @@
           %th
           %th
           %th
+          %th
+          %th
+          %th
+          %th
+          %th
           %th.actions
         %tr
           %th Score
@@ -49,6 +54,11 @@
           %th Talk Title
           %th Track
           %th Session Format
+          %th Events
+          %th Keywords
+          %th Abstract
+          %th Required Knowledge
+          %th Learning Objectives
           %th Reviewer Tags
           %th Status
           %th.actions Soft Actions (Internal)
@@ -60,6 +70,15 @@
             %td= proposal.title_link
             %td= proposal.track_name
             %td= proposal.session_format_name
+            %td= proposal.occurrencesView
+            %td= proposal.keywords
+            %td= proposal.abstract
+            %td
+              .markdown{ data: { 'field-id' => 'proposal_details' } }
+                = markdown(proposal.details)
+            %td
+              .markdown{ data: { 'field-id' => 'proposal_pitch' } }
+                = markdown(proposal.pitch)
             %td= proposal.review_tags_labels
             %td
               %span.proposal-status= proposal.state_label(small: true, show_confirmed: true)
