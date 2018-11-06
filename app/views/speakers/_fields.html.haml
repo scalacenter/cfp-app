@@ -7,6 +7,12 @@
 
     = speaker_fields.input :name, disabled: true, tooltip: ["right", "Edit your profile to update"]
 
+    = speaker_fields.input :photo_url, label: 'Photo URL', hint: "Public URL of your photo"
+
     = speaker_fields.input :bio, disabled: speaker.user!=current_user, maxlength: :lookup, input_html: { value: speaker.bio, rows: 4 }, hint: "Your bio should be short, no longer than 500 characters. It's related to why you're speaking about this topic."#, popover_icon: { content: bio_tooltip }
 
     = speaker_fields.input :webpage, hint: "URL of the speaker’s webpage"
+
+    = speaker_fields.input :twitter, hint: "Twitter handle"
+
+    = speaker_fields.input :experience, maxlength: :lookup, input_html: { value: speaker.experience, rows: 4 }, hint: "Previous experience as a conference speaker"

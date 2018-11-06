@@ -1,7 +1,11 @@
 .speaker.clearfix
   %strong= speaker.name
+
   - if speaker.webpage.present?
     %a{ :href => speaker.webpage}= speaker.webpage
+
+  - if speaker.twitter.present?
+    %a{ :href => "https://twitter.com/@#{speaker.twitter}"}= "@#{speaker.twitter}"
 
   - if withdraw && speaker.proposal.speakers.count > 1 && !speaker.proposal.finalized?
     %p= link_to "Withdraw",
@@ -10,5 +14,10 @@
         class: "btn btn-danger btn-sm pull-right remove-speaker",
         data: { confirm: "This will remove #{speaker.name} from this proposal. Are you sure you want to do this?" }
 
+  - if speaker.photo_url.present?
+    %img{ :src => speaker.photo_url }
+
   = simple_format speaker.bio
+
+  = simple_format speaker.experience
 %hr

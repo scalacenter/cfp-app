@@ -11,6 +11,7 @@ class Speaker < ApplicationRecord
 
   validates :event, presence: true
   validates :bio, length: {maximum: 500}
+  validates :experience, length: {maximum: 500}
   validates :name, :email, presence: true, unless: :skip_name_email_validation
   validates_format_of :email, with: Devise.email_regexp
 
@@ -48,6 +49,9 @@ end
 #  created_at         :datetime
 #  updated_at         :datetime
 #  webpage            :string           default("")
+#  twitter            :string           default("")
+#  photo_url          :string           default("")
+#  experience         :text             default("")
 #
 # Indexes
 #

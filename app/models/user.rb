@@ -63,8 +63,12 @@ class User < ApplicationRecord
     update(bio: speakers.last.bio) if bio.blank?
   end
 
-  def update_webpage
+  # updates fields taken from the speaker part of the form
+  def update_speaker_fields
     update(webpage: speakers.last.webpage) if webpage.blank?
+    update(twitter: speakers.last.twitter) if twitter.blank?
+    update(photo_url: speakers.last.photo_url) if photo_url.blank?
+    update(experience: speakers.last.experience) if experience.blank?
   end
 
   def gravatar_hash
@@ -172,6 +176,9 @@ end
 #  created_at             :datetime
 #  updated_at             :datetime
 #  webpage                :string           default("")
+#  twitter                :string           default("")
+#  photo_url              :string           default("")
+#  experience             :text             default("")
 #
 # Indexes
 #

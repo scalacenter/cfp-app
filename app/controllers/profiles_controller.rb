@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:bio, :gender, :ethnicity, :country, :name, :email, :webpage, :password, :password_confirmation)
+    params.require(:user).permit(:bio, :gender, :ethnicity, :country, :name, :email, :webpage, :experience, :photo_url, :twitter, :password, :password_confirmation)
   end
 
   def incomplete_profile_msg

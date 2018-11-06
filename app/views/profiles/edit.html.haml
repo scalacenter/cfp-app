@@ -15,13 +15,12 @@
           - unless current_user.complete?
             %p
               Please make sure your name and email address are present and correct.
-          %p
-            This information will be
-            %strong hidden
-            from the review committee during the review process.
           .form-group
             = f.label :name
             = f.text_field :name, class: 'form-control', placeholder: 'Your name', autofocus: true
+          %p
+            = f.label :photo_url
+            = f.text_field :photo_url, class: 'form-control', placeholder: 'Your photo URL'
           %p
             = f.label :bio
             = f.text_area :bio, class: 'form-control', placeholder: 'Enter your bio', rows: 7, maxlength: 500
@@ -29,6 +28,13 @@
           %p
             = f.label :webpage
             = f.text_field :webpage, class: 'form-control', placeholder: 'http://me.com'
+          %p
+            = f.label :twitter
+            = f.text_field :twitter, class: 'form-control', placeholder: 'my_twitter_handle'
+          %p
+            = f.label :experience
+            = f.text_area :experience, class: 'form-control', placeholder: 'Enter your past experience as a speaker', rows: 7, maxlength: 500
+            %p.help-block Experience is limited to 500 characters.
 
     %fieldset.col-md-6
       .widget

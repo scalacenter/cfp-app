@@ -21,4 +21,16 @@ class SpeakerDecorator < ApplicationDecorator
   def webpage
     object.webpage.present? ? object.webpage : object.user.try(:webpage)
   end
+
+  def experience
+    object.experience.present? ? object.experience : object.user.try(:experience)
+  end
+
+  def twitter
+    object.twitter.present? ? object.twitter : object.user.try(:twitter)
+  end
+
+  def photo_url
+    object.photo_url.present? ? object.photo_url : object.user.try(:photo_url)
+  end
 end

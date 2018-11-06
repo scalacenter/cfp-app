@@ -77,7 +77,7 @@ class ProposalsController < ApplicationController
 
     if @proposal.save
       current_user.update_bio
-      current_user.update_webpage
+      current_user.update_speaker_fields
       flash[:info] = setup_flash_message
       redirect_to event_proposal_url(event_slug: @event.slug, uuid: @proposal)
     else
@@ -127,7 +127,7 @@ class ProposalsController < ApplicationController
   def proposal_params
     params.require(:proposal).permit(:title, :keywords, {tags: []}, :session_format_id, :track_id, :abstract, :details, :pitch, custom_fields: @event.custom_fields,
                                      comments_attributes: [:body, :proposal_id, :user_id],
-                                     speakers_attributes: [:bio, :id, :webpage])
+                                     speakers_attributes: [:bio, :id, :webpage, :photo_url, :experience, :twitter])
   end
 
   def notes_params
