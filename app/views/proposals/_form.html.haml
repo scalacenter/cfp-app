@@ -1,19 +1,4 @@
 %fieldset.margin-top
-  %legend.fieldset-legend Event(s)
-  - error_class = proposal.errors.include?(:internal_occurrences) ? 'field_with_errors' : ''
-  .form-group(class=error_class)
-    %label.control-label.required(for='proposal_internal_occurrences')
-      Which conference(s) do you want to apply to?
-      %span(title='required')
-        *
-    %div
-      = f.select :internal_occurrences,
-        options_for_select(Proposal.allOccurrences, proposal.object.occurrences),
-        {}, {class: 'multiselect proposal-occurrences', multiple: true}
-      - if proposal.errors.include?(:internal_occurrences)
-        %span.help-block can't be blank
-
-%fieldset
   %legend.fieldset-legend Proposal
 
   = proposal.title_input(f)
