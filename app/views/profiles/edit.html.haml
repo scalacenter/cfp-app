@@ -19,7 +19,7 @@
             = f.label :name
             = f.text_field :name, class: 'form-control', placeholder: 'Your name', autofocus: true
           %p
-            = f.label :photo_url
+            = f.label :photo_url, 'Photo URL'
             = f.text_field :photo_url, class: 'form-control', placeholder: 'Your photo URL'
           %p
             = f.label :bio
@@ -32,7 +32,7 @@
             = f.label :twitter
             = f.text_field :twitter, class: 'form-control', placeholder: 'my_twitter_handle'
           %p
-            = f.label :experience
+            = f.label :experience, 'Speaking Experience'
             = f.text_area :experience, class: 'form-control', placeholder: 'Enter your past experience as a speaker', rows: 7, maxlength: 500
             %p.help-block Experience is limited to 500 characters.
 

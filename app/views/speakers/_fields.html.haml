@@ -15,4 +15,4 @@
 
     = speaker_fields.input :twitter, hint: "Twitter handle"
 
-    = speaker_fields.input :experience, maxlength: :lookup, input_html: { value: speaker.experience, rows: 4 }, hint: "Previous experience as a conference speaker"
+    = speaker_fields.input :experience, label: 'Speaking Experience', maxlength: :lookup, input_html: { value: speaker.experience, rows: 4 }, hint: "Previous experience as a conference speaker"
