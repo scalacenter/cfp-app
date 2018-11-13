@@ -19,8 +19,9 @@ class Proposal < ApplicationRecord
   belongs_to :track
 
   validates :title, :abstract, :session_format, :pitch, :details, :track, :keywords, presence: true
+  validates_associated :speakers
 
-  # This used to be 600, but it's so confusing for users that the browser
+      # This used to be 600, but it's so confusing for users that the browser
   # uses \r\n for newlines and they're over the 600 limit because of
   # bytes they can't see. So we give them a bit of tolerance.
   validates :abstract, length: {maximum: 625}
