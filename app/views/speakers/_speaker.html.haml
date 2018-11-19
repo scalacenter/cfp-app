@@ -14,9 +14,6 @@
         class: "btn btn-danger btn-sm pull-right remove-speaker",
         data: { confirm: "This will remove #{speaker.name} from this proposal. Are you sure you want to do this?" }
 
-  - if speaker.photo_url.present?
-    %img{ :src => speaker.photo_url }
-
   = simple_format speaker.bio
 
   = simple_format speaker.experience

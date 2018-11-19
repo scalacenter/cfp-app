@@ -34,7 +34,8 @@
       .program-session-item
         %h3.control-label Photo
         %p
-          %img{ :src => @speaker.photo_url }
+          %a{ :href => @speaker.photo_url }
+            = @speaker.photo_url
       .program-session-item
         %h3.control-label Bio
         %p= @speaker.bio
