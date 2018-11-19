@@ -9,7 +9,7 @@ class Speaker < ApplicationRecord
 
   serialize :info, Hash
 
-  validates :event, :photo_url, presence: true
+  validates :event, :photo_url, :experience, presence: true
   validates :bio, length: {maximum: 500}
   validates :experience, length: {maximum: 500}
   validates :name, :email, presence: true, unless: :skip_name_email_validation
