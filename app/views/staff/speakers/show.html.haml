@@ -32,6 +32,10 @@
         %h3.control-label Email
         %p= mail_to(@speaker.email)
       .program-session-item
+        %h3.control-label Photo
+        %p
+          %img{ :src => @speaker.photo_url }
+      .program-session-item
         %h3.control-label Bio
         %p= @speaker.bio
       .program-session-item
