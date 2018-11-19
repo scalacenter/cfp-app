@@ -34,6 +34,9 @@
       .program-session-item
         %h3.control-label Bio
         %p= @speaker.bio
+      .program-session-item
+        %h3.control-label Previous Experience
+        %p= @speaker.experience
       - if @speaker.program_session
         .program-session-item
           %h3.control-label Program Session
