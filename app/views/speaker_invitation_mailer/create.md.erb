@@ -3,5 +3,9 @@ Hello!
 <%= @speaker.name %> has invited you to be a speaker for the proposal
 "<%= @proposal.title %>" at <%= @proposal.event %>.
 
+Before accepting the invitation, check that you have filled the
+photo URL and past experience fields in
+ <%= md_link_to("your profile", url_for({ action: 'edit', controller: 'profiles', only_path: false })) %>.
+
 You can view the proposal and accept or decline this invitation by visiting
  <%= md_link_to "the proposal page", invitation_url(@invitation.slug) %>.
