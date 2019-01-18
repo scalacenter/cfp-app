@@ -57,5 +57,7 @@ Rails.application.configure do
 
   I18n.enforce_available_locales = false
 
-  config.time_zone = ENV.fetch('TIMEZONE') {'Pacific Time (US & Canada)'}
+  # has to be *this* value because we always show “AoE (UTC-12h)”
+  # in place of the actual timezone.
+  config.time_zone = 'Pacific/Apia'
 end

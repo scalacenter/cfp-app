@@ -99,7 +99,9 @@ Rails.application.configure do
 
   config.exceptions_app = self.routes
 
-  config.time_zone = ENV.fetch('TIMEZONE') {'Pacific Time (US & Canada)'}
+  # has to be *this* value because we always show “AoE (UTC-12h)”
+  # in place of the actual timezone.
+  config.time_zone = 'Pacific/Apia'
 
   Rack::Timeout.timeout = 15
 end
