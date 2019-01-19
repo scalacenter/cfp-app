@@ -59,5 +59,5 @@ Rails.application.configure do
 
   # has to be *this* value because we always show “AoE (UTC-12h)”
   # in place of the actual timezone.
-  config.time_zone = 'Pacific/Apia'
+  config.time_zone = 'Etc/GMT+12'
 end
